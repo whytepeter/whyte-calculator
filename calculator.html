@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    
+    <style>
+        * {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(1, 67, 189);
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.about {
+    width:50px;
+    height:50px;
+    background-color: #fff;
+    border:none;
+    border-radius: 50px;
+    position: fixed;
+    text-decoration: none;
+
+   font-weight: bold;
+   color:rgb(3, 56, 172);
+   box-shadow:0 0 20px 2px rgba(0,0,0, .2);
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+}
+.about:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.facebook {
+    font-size: 40px;
+   top: 40px;
+   left: 75%;
+}
+.source{
+    color:rgb(253, 166, 5);
+    font-size: 30px;
+    top: 40px;
+    left: 68%;
+}
+
+.container {
+    width:300px;
+    height: 450px;
+    background-color: aliceblue;
+    margin:auto;
+    margin-top: 100px;
+    padding:10px;
+
+    display: flex;
+    flex-direction: column;
+   
+    overflow: hidden;
+}
+form {
+    position: relative;
+}
+.date {
+    position: absolute;
+    background-color: rgb(117, 117, 117);
+    color:#fff;
+    font-size: 12px;
+    padding:5px;
+    width:60px;
+    text-align: center;
+    right: 1px;
+}
+
+.font {
+    color:#333;
+    font-weight: 500;
+}
+
+input[type="text"] {
+   ;
+    background-color: rgb(223, 223, 223);
+    width:100%;
+    height:50px;
+    border:1px solid rgb(201, 201, 201);
+    margin-bottom: 3px;
+    
+    outline: none;
+    overflow: hidden;
+}
+.input {
+    padding-left: 10px;
+    padding-right: 75px;
+    font-size: 20px
+}
+.answer {
+    color:rgb(17, 155, 17);
+    font-size: 28px;
+    text-align: left;
+    padding: 0 15px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.operators {
+    width:100%; 
+    margin: 10px 0;  
+}
+.numbers {
+    margin:15px 0;
+    display:flex;
+}
+.operator {
+    color:#fff;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.btn-wrapper {
+    width:100%;
+    height: 100%;
+}
+
+.row {
+    width:100%;
+    margin-bottom: 5px;
+    margin:10px 0;
+}
+
+.btn {
+    width:50px;
+    height:50px;
+    border: none;
+    outline: none;
+}
+.btn:hover {
+    
+}
+.btn:active {
+    transform: translateY(1px);
+}
+
+.number, .delete {
+    width:55px;
+    height:55px;
+    background-color: rgb(196, 196, 196);
+    color:rgb(36, 36, 36);
+    font-weight: bold;
+    font-size: 18px;
+}
+.equal {
+    width:100%;
+    margin:auto;
+    margin-top: 5px;
+    background-color: rgb(0, 158, 221);
+}
+
+.add {
+background-color: rgb(0, 66, 151);
+}
+.subtract {
+    background-color: rgb(12, 151, 42);
+}
+.divide {
+    background-color: rgb(45, 0, 151);
+}
+.multiply {
+    background-color: rgb(255, 137, 1);
+}
+
+.clear {
+    background-color: rgb(199, 15, 15);
+    border-radius: 50px;
+}
+.delete {
+    background-color: rgb(94, 94, 94);
+    color:#000;
+}
+    </style>
+</head>
+<body>
+
+<a class='about facebook flex' href="https://web.facebook.com/whytecode1">
+  f
+</a>
+<a class='source about flex' href="https://drive.google.com/open?id=1yU-kJer9692tMjxivHuPVVOWHNM6FvO9">
+  <>
+</a>
+
+<div class="container">
+  <form>
+    <div class="date"></div>
+    <input type="text" id="input" class ="input font" name="inputfield"  >
+    <input type="text" id="answer" class="answer font" name="answerfield" >
+  </form>
+
+<div class="btn-wrapper">
+  <div class="operators flex">
+    <input type="button" value="+" class="add operator btn " onclick="Click('+')">
+    <input type="button" value="-" class="subtract operator btn" onclick="Click('-')">
+    <input type="button" value="/" class="divide operator btn" onclick="Click('/')">
+    <input type="button" value="X" class="multiply operator btn" onclick="Click('*')">
+   
+    <input type="button" value ="<" class="clear operator btn" onclick="Clear()">
+  </div>
+
+  <div class="numbers">
+      <div class="numbers-1">
+    <div class="row flex">
+      <input type="button" value="1" class="number btn" onclick="Click(1)">
+      <input type="button" value="2" class="number btn" onclick="Click(2)">
+      <input type="button" value="3" class="number btn" onclick="Click(3)">
+      <input type="button" value="4" class="number btn" onclick="Click(4)">
+    </div>
+    <div class="row flex">
+      <input type="button" value="5" class="number btn" onclick="Click(5)">
+      <input type="button" value="6" class="number btn" onclick="Click(6)">
+      <input type="button" value="7" class="number btn" onclick="Click(7)">
+      <input type="button" value="8" class="number btn" onclick="Click(8)">
+    </div>
+    <div class="row flex">
+      <input type="button" value="9" class="number btn" onclick="Click(9)">
+      <input type="button" value="0" class="number btn" onclick="Click(0)">
+      <input type="button" value="." class="number btn" onclick="Click('.')">
+      <input type="button" value="C" class="delete btn" onclick="del()">
+    </div>
+    
+</div>
+<div class="cosine">
+        <input type="button" value="Sin" class="sct sin btn" onclick="Click(5)">
+        <input type="button" value="Cos" class="sct cos btn" onclick="Click(6)">
+        <input type="button" value="Tan" class="sct tan btn" onclick="Click(7)">
+</div>
+
+  </div>
+  <input type="button" value="=" class="equal operator btn" onclick="equal()">
+</div>
+</div>
+
+
+<script>
+    // Dsiplaying of Current Date
+const currentDate = function() {
+   const displayDate = document.querySelector('.date');
+   const date = new Date();
+   const hours = date.getHours();
+   const mins = date.getMinutes();
+   const secs = date.getSeconds();
+
+    displayDate.innerHTML =   `${hours}:${mins}:${secs}`;
+}
+ setInterval(currentDate, 1000);
+
+
+ // On Button clicks 
+function Click(el){
+    document.getElementById('input').value += el;
+    console.log(el);
+};
+
+// Delete button
+function del(){
+    document.getElementById('input').value = " ";
+    document.getElementById('answer').value = " ";
+};
+
+// Evaluate
+function equal(){
+    let exp = document.getElementById('input').value;
+    if(exp){
+        document.getElementById('answer').value = eval(exp);
+    }
+    
+}
+
+// Back Space
+function Clear(){
+    let nums = document.getElementById('input').value;
+    document.getElementById('input').value = nums.substr(0, nums.length-1);
+}
+</script>
+</body>
+</html>

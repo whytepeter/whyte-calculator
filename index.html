@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class='about facebook flex' href="https://web.facebook.com/whytecode1">
+  f
+</a>
+<a class='source about flex' href="https://drive.google.com/open?id=1yU-kJer9692tMjxivHuPVVOWHNM6FvO9">
+  <>
+</a>
+
+<div class="container">
+  <form>
+    <div class="date"></div>
+    <input type="text" id="input" class ="input font" name="inputfield"  >
+    <input type="text" id="answer" class="answer font" name="answerfield" >
+  </form>
+
+<div class="btn-wrapper">
+  <div class="operators flex">
+    <input type="button" value="+" class="add operator btn " onclick="Click('+')">
+    <input type="button" value="-" class="subtract operator btn" onclick="Click('-')">
+    <input type="button" value="/" class="divide operator btn" onclick="Click('/')">
+    <input type="button" value="X" class="multiply operator btn" onclick="Click('*')">
+   
+    <input type="button" value ="<" class="clear operator btn" onclick="Clear()">
+  </div>
+
+  <div class="numbers">
+    <div class="row flex">
+      <input type="button" value="1" class="number btn" onclick="Click(1)">
+      <input type="button" value="2" class="number btn" onclick="Click(2)">
+      <input type="button" value="3" class="number btn" onclick="Click(3)">
+      <input type="button" value="4" class="number btn" onclick="Click(4)">
+    </div>
+    <div class="row flex">
+      <input type="button" value="5" class="number btn" onclick="Click(5)">
+      <input type="button" value="6" class="number btn" onclick="Click(6)">
+      <input type="button" value="7" class="number btn" onclick="Click(7)">
+      <input type="button" value="8" class="number btn" onclick="Click(8)">
+    </div>
+    <div class="row flex">
+      <input type="button" value="9" class="number btn" onclick="Click(9)">
+      <input type="button" value="0" class="number btn" onclick="Click(0)">
+      <input type="button" value="." class="number btn" onclick="Click('.')">
+      <input type="button" value="C" class="delete btn" onclick="del()">
+    </div>
+    <input type="button" value="=" class="equal operator btn" onclick="equal()">
+  </div>
+</div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
